@@ -2,20 +2,44 @@ import 'dart:io';
 
 void main() {
 
-  int n1, n2, large;
-  stdout.write("Enter first number : ");
-  n1 = int.parse(stdin.readLineSync()!);
+  List<String> shoppingList = [
+    "Apple",
+    "Bread",
+    "Milk",
+    "Pampers",
+  ];
 
-  stdout.write("Enter second number : ");
-  n2 = int.parse(stdin.readLineSync()!);
+  shoppingList.add("shoe Polish");
+  shoppingList.add("Honey");
+  shoppingList.remove("Pampers");
+  shoppingList.insert(1, "Banana");
 
-  large = (n1 > n2) ? n1 : n2;
 
-  // if( n1 > n2 ){
-  //   large = n1;
-  // }else {
-  //   large = n2;
-  // }
+  print(shoppingList.length);
+  print(shoppingList);
+  print(shoppingList.first);
+  print(shoppingList.last);
 
-  print('Large number is $large');
+  shoppingList.addAll(['Lipstick', "3 piece suit"]);
+
+
+  print("***********************************");
+  for( var i = 0; i < shoppingList.length; i++){
+    print(shoppingList[i]);
+  }
+
+  print('***** for in loop ****');
+
+  for( var element in shoppingList){
+    print(element);
+  }
+
+  List<String> friends = [ "ali", "bilal", "khan"];
+
+  print("*************************");
+  for( String friend in friends){
+    print(friend.toUpperCase());
+  }
+
+  List<dynamic> anything = [1, "ali", true];
 }
