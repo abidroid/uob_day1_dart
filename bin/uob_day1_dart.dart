@@ -1,50 +1,40 @@
-import 'dart:io';
+// User defined DataType
+class Student {
+  late String name;
+  late String fatherName;
+  String? mobileNumber;
 
+  // default constructor
+  // parameterized constructor
+  Student({required this.name,required this.fatherName, this.mobileNumber});
 
-void displayMyString( String str ){
-
-  for( var i = 1; i < 31; i++ ){
-    stdout.write(str);
+  void display() {
+    print('Name: $name');
+    print("Father Name: $fatherName");
+    print('Mobile # : $mobileNumber');
   }
-  print('');
 }
 
-void sum( int x, int y ) => print('Sum = ${x+y}');
+void main() {
+  Student hina = Student(name: 'Hina', fatherName: 'Khan', mobileNumber: '0838838383');
 
-int square( int radius )
-{
-  return radius*radius;
+  Student bilal = Student(name: 'Bilal', fatherName: 'Ali');
+
+  List<Student> studentList = [
+    hina,
+    bilal,
+    Student(name: 'Rubeena', fatherName: 'Riaz'),
+  ];
+
+  for( Student s in studentList){
+    s.display();
+    print('*******************');
+  }
 }
 
-// Boss
-  void main() {
-
-  print( square( square(2) ) );
-
-
-    //table(range: 9, number: 8);
-
-    // sum(5, 6);
-    // square(7);
-    // sum(2, 3);
-    // sum(59, 1);
-
-    // displayMyString("#"); // actual arguments
-    // displayMyString("+");
-    // displayStars();
-  }
-
-  void displayStars()
-  {
-    print('**************************');
-  }
-
-
-// Positional parameters
-// Named Parameters
-void table( {required int number, required int range} )
-{
-  for( var i = 1; i <= range; i++ ){
-    print('$number X $i = ${number * i}');
-  }
+class Doctor {
+  late String name;
+  late String spe;
+  late int fee;
+  late String clinicAddress;
 }
