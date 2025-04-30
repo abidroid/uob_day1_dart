@@ -1,20 +1,19 @@
 import 'dart:io';
 
 void main() {
-  // String name;
-  // stdout.write( 'Enter your name : ');
-  // name = stdin.readLineSync()!;
-  //
-  // print('Welcome $name');
 
-  int n1, n2;
-  int result;
-  stdout.write("Enter first number : ");
-  n1 = int.parse(stdin.readLineSync()!);
+  int n;
+  stdout.write("Enter a number less than ten : ");
+  n = int.parse(stdin.readLineSync()!);
 
-  stdout.write('Enter second number: ');
-  n2 = int.parse(stdin.readLineSync()!);
+  if( n < 10 )
+  {
+    print("Shaabaash");
+  }
+  else
+  {
+      print("Very Bad");
+  }
 
-  result = n1 % n2;
-  print('Remainder = $result');
+  print('End');
 }
